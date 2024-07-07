@@ -2,7 +2,7 @@ import json
 import sys
 
 
-def get_data_from_file(path:str)->dict:
+def get_data_from_file(path:str)-> dict:
     """Получение json данных из файла
 
     Args:
@@ -11,11 +11,11 @@ def get_data_from_file(path:str)->dict:
     Returns:
         dict: Словарь с полученными данными
     """
-    with open(path,"r",encoding="utd-8") as file:
+    with open(path,"r",encoding="utf-8") as file:
         return json.load(file)
 
 
-def make_report(tests:dict,values:dict,path:str)->None:
+def make_report(tests:dict,values:dict,path:str)-> None:
     """генерация отчета на основании входных данных
 
     Args:
@@ -39,10 +39,11 @@ def make_report(tests:dict,values:dict,path:str)->None:
 
 
 def parse_json_data(tests_data:dict,values)->None:
-    """_summary_
+    """Функция разбора json
 
     Args:
-        tests_data (dict): _description_
+        tests_data (dict): Словарь тестов
+        values (dict): данные о прохождении тестов
     """
     for test in tests_data["values"]:
         if get_test_result(test["id"],values):

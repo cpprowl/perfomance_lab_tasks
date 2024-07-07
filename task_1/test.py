@@ -1,4 +1,4 @@
-from task_1 import circle_array
+from task_1.task_1 import circle_array
 def test_circle_array():
     """Проверка функции circle_array"""
     assert circle_array(4,3) == ["1","3"]

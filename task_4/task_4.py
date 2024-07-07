@@ -1,7 +1,7 @@
 import sys
 
 
-def get_data_from_file(path:str)->list:
+def get_data_from_file(path:str) -> list:
     """Чтение данных из файла
 
     Args:
@@ -14,7 +14,7 @@ def get_data_from_file(path:str)->list:
         return file.readlines()
 
 
-def calcultate_arithmetic_mean(digits:list)->int:
+def calcultate_arithmetic_mean(digits:list) -> int:
     """Подсчет среднего арифметического суммы чисел в списке
 
     Args:
@@ -43,17 +43,10 @@ def calculate_steps(digits:list) -> int:
     a_m = calcultate_arithmetic_mean(digits)
     for item in digits:
         item = abs(int(item))
-        if item == a_m:
-            continue
-        while item != a_m:
-            if item > a_m:
-                item-=1
-                steps+=1
-                continue
-            if item < a_m:
-                item+=1
-                steps+=1
-                continue
+        if item > a_m:
+            steps += item - a_m
+        if item <= a_m:
+            steps += a_m - item
     return steps
 
 

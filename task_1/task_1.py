@@ -14,7 +14,7 @@ def circle_array(m:int , n:int) -> list:
 
     array = [i for i in range(1,m+1)]
     if n > len(array):
-        print("Длинна шага не может быть больше длинны массива")
+        print("Длина шага не может быть больше длины массива")
         return None
     if n == len(array):
         

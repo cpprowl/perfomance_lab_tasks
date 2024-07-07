@@ -7,8 +7,8 @@ def get_circle_data(path:str)->dict:
     with open(path, "r") as file:
         circle = {}
         data = file.readlines()
-        circle["center"] = data[0]
-        circle["radius"] = data[1]
+        circle["center"] = data[0].rstrip()
+        circle["radius"] = data[1].rstrip()
         return circle
 
 def get_points_data(path:str)->list:
@@ -16,7 +16,7 @@ def get_points_data(path:str)->list:
     with open(path, "r") as file:
         points = []
         for point in file.readlines():
-            points.append(point)
+            points.append(point.rstrip())
         return points
 
 def calculate_point_position(g:int, f:int, r:int,x:int,y:int) -> int:
